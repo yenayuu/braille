@@ -32,6 +32,20 @@ Braille Cell Layout:
 
 ## How to Run This Project
 
+### Option 0: PDF to Braille (Terminal)
+
+Convert text from a PDF file to Braille and print the result in the terminal (no Arduino needed).
+
+1. Install Python 3 and dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Run the converter with a PDF path:
+   ```bash
+   python tools/pdf_to_braille.py path/to/your/document.pdf
+   ```
+3. The script extracts text from all pages and prints each character’s Braille cell (same 2×4 layout as the Arduino output).
+
 ### Option 1: Wokwi Web Simulator (Recommended)
 
 1. Go to [wokwi.com](https://wokwi.com/)
@@ -77,19 +91,23 @@ Braille Cell Layout:
 
 ```
 braille/
+├── tools/                   # PDF-to-Braille (terminal)
+│   ├── pdf_to_braille.py    # CLI: reads PDF, prints Braille to terminal
+│   └── braille.py           # Braille character mapping and visualization
+├── requirements.txt        # Python deps for PDF tool (pypdf)
 ├── src/
-│   └── main.cpp           # Main application code
+│   └── main.cpp             # Main application code (Arduino)
 ├── lib/
 │   └── BrailleCell/
-│       ├── BrailleCell.h   # Braille cell library header
-│       └── BrailleCell.cpp # Braille cell implementation
-├── wokwi_web/              # Files for Wokwi web interface
+│       ├── BrailleCell.h    # Braille cell library header
+│       └── BrailleCell.cpp  # Braille cell implementation
+├── wokwi_web/               # Files for Wokwi web interface
 │   ├── sketch.ino
 │   ├── BrailleCell.h
 │   └── BrailleCell.cpp
-├── diagram.json            # Wokwi circuit diagram
-├── wokwi.toml              # Wokwi configuration
-└── platformio.ini          # PlatformIO configuration
+├── diagram.json             # Wokwi circuit diagram
+├── wokwi.toml               # Wokwi configuration
+└── platformio.ini           # PlatformIO configuration
 ```
 
 ## Example Output
