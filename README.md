@@ -59,6 +59,16 @@ Convert text from a document to Braille and print the result in the terminal (no
 
 The legacy `pdf_to_braille.py` script is still available for PDF-only use.
 
+### Option 0.5: Desktop UI (Open/Save/Convert)
+
+Use a desktop app flow similar to the native driver UI (open file, edit text, send/convert to Braille, save text):
+
+```bash
+python tools/braille_ui.py
+```
+
+The UI accepts the same document formats as `doc_to_braille.py` (PDF, EPUB, DOCX, HTML, TXT) and uses the same extraction and cleaning logic.
+
 ### Option 1: Wokwi Web Simulator (Recommended)
 
 1. Go to [wokwi.com](https://wokwi.com/)
